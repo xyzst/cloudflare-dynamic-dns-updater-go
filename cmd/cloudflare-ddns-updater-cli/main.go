@@ -14,18 +14,18 @@ import (
 )
 
 type CloudflareUpdate struct {
-	Type string `json:"type"`
-	Name string `json:"name"`
+	Type    string `json:"type"`
+	Name    string `json:"name"`
 	Content string `json:"content"`
-	Ttl string `json:"ttl"`
-	Proxied bool `json:"proxied"`
+	Ttl     string `json:"ttl"`
+	Proxied bool   `json:"proxied"`
 }
 
 type Cloudflare struct {
-	Success  bool                `json:"success"`
-	Errors   []string            `json:"errors"`
-	Messages []string            `json:"messages"`
-	Result   []map[string]string `json:"result"`
+	Success  bool                     `json:"success"`
+	Errors   []map[string]interface{} `json:"errors"`
+	Messages []map[string]interface{} `json:"messages"`
+	Result   []map[string]interface{} `json:"result"`
 }
 
 type Configuration struct {
@@ -163,10 +163,10 @@ func main() {
 					} else {
 						rid := result["id"]
 						uu, err := json.Marshal(&CloudflareUpdate{
-							Type: public.GetRecordType(),
-							Name: recordName,
+							Type:    public.GetRecordType(),
+							Name:    recordName,
 							Content: public.RawIp,
-							Ttl: ttl,
+							Ttl:     ttl,
 							Proxied: proxy,
 						})
 						// https://api.cloudflare.com/#dns-records-for-a-zone-patch-dns-record
