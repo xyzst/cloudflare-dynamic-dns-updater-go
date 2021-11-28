@@ -1,4 +1,4 @@
 *.iml
 .idea
-cloudflare-ddns-updater-cli
+./cloudflare-ddns-updater-cli
 configuration.yml
