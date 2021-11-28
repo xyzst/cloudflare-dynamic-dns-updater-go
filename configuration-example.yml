@@ -1,0 +1,14 @@
+---
+cloudflare:
+  email: 'name@domain.com'
+  method: 'token | global'
+  key: ''
+  zone_id: ''
+  record_name: ''
+  time_to_live: 3600
+  proxy: false
+  notifications:
+    slack:
+      webhook_uri: 'https://hooks.slack.com/...'
+      site_name: ''
+      channel: '#...'
