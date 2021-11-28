@@ -28,5 +28,5 @@ $ ./cloudflare-ddns-updater-cli /full/path/to/configuration.yml
 
 ## Improvements
 
-[ ] refactor for readability
-[ ] add alert integration with popular messaging services (ie, slack)
+- [ ] refactor for readability
+- [ ] add alert integration with popular messaging services (ie, slack)
